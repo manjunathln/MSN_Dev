@@ -26,11 +26,6 @@ private StdService stdservice;
 		return stdservice.getAll();
 	}
 	
-
-@RequestMapping("/info1")
-	public List<Student> getName() {
-		return stdservice.getAll();
-	}
 	/***
 	Added Method added
 	**/
