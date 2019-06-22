@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,21 +17,19 @@ import io.msn.model.Student;
 @RestController
 public class StudentService {
 
-	List<Student> stdinfo= new ArrayList(Arrays.asList(
-		new Student(1,"manju","1"),new Student(2,"manju","2")
-		
-	));
+	@Autowired
+private StdService stdservice;	
 	
 	
 	@RequestMapping("/info")
 	public List<Student> getName() {
-		return stdinfo;
+		return stdservice.getAll();
 	}
 	
 
 	@RequestMapping(method=RequestMethod.POST,value="/add")
 	public String addStudent(@RequestBody Student st) {
-		stdinfo.add(st);
+		stdservice.addRecord(st);
 		return "Added";
 	}
 	
