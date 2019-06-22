@@ -26,7 +26,13 @@ private StdService stdservice;
 		return stdservice.getAll();
 	}
 	
-
+@RequestMapping("/info1")
+	public List<Student> getName() {
+		return stdservice.getAll();
+	}
+	
+	
+	
 	@RequestMapping(method=RequestMethod.POST,value="/add")
 	public String addStudent(@RequestBody Student st) {
 		stdservice.addRecord(st);
