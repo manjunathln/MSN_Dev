@@ -27,6 +27,9 @@ private StdService stdservice;
 	}
 	
 
+	/***
+	Added Method added
+	**/
 	@RequestMapping(method=RequestMethod.POST,value="/add")
 	public String addStudent(@RequestBody Student st) {
 		stdservice.addRecord(st);
