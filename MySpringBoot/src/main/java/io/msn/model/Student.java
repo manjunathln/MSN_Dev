@@ -1,7 +1,12 @@
 package io.msn.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Student {
 
+	@Id
 	int id;
 	String name;
 	String division;
